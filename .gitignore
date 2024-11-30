@@ -1,0 +1,56 @@
+# General
+*.DS_Store
+*.log
+*.bak
+*.tmp
+*.swp
+
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.egg-info/
+.eggs/
+*.coverage
+*.pytest_cache/
+.cache/
+*.vscode/
+
+py/game_log.txt
+py/quantize.py
+py/reduce.py
+
+# Models and large files
+py/model/*
+py/dataset/*
+!checkmate_py/models/README.md  # Allow README.md to document the models folder
+py/*.h5
+py/*.pkl
+py/*.pt
+
+# Node.js/React (UI project)
+node_modules/
+build/
+dist/
+.env
+.DS_Store
+.cache/
+
+# IDE-specific files
+*.idea/
+.vscode/
+*.iml
+
+# Miscellaneous
+.env
+py/.env
+ui/.env
+
+# Ignore temporary or backup files
+*.tmp
+*.bak
+*.swp
+
+# Ignore dependency lock files (optional)
+yarn.lock
+package-lock.json

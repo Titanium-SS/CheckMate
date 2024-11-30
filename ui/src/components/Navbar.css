@@ -1,0 +1,104 @@
+/* Base styling for the Navbar */
+.navbar {
+    height: 60px;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    background: rgba(103, 237, 195, 0.2); /* Transparent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    margin-bottom: 16px;
+    position: fixed; /* Ensure it's always visible at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10; /* Make sure navbar stays above other content */
+}
+
+/* Container to align navbar contents */
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Logo styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 50px; /* Increased size */
+    height: 50px;
+    margin-right: 12px; /* Adjust space between logo and text */
+    border-radius: 50%; /* Make logo image circular */
+}
+
+/* Logo Text */
+.logo-text {
+    font-size: 26px; /* Adjust font size if needed */
+    font-weight: 700;
+    color: #393a3c;
+    text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer; /* Add a pointer cursor for interactivity */
+  }
+  
+  .logo-text:hover {
+    background-color: rgba(103, 237, 195, 0.2); /* Subtle background on hover */
+    color: #000000; /* Golden text color on hover */
+  }
+  
+
+/* Navigation Links */
+.nav-navigation a {
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-navigation a:hover {
+    color: #000000;
+}
+
+/* GitHub Button Styling */
+.nav-button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: black; /* Idle background color */
+    color: white; /* Idle text color */
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition */
+    border: 2px solid black; /* Add a border to avoid layout shift on hover */
+}
+
+.nav-button:hover {
+    background: white; /* Hover background color */
+    color: black; /* Hover text color */
+    border: 2px solid white; /* Optional: Adjust border for hover state */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-container {
+        max-width: 720px;
+    }
+
+    .logo-text {
+        font-size: 20px; /* Smaller text for smaller screens */
+    }
+}

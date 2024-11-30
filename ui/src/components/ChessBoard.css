@@ -1,0 +1,95 @@
+/* Board Panel Styling */
+.board-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    gap: 1rem;
+    background-color: #e0d7ff; /* Light purple background for a fresh look */
+    border-radius: 12px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+    margin-top: 80px; /* Ensure it's pushed below the fixed navbar */
+}
+
+/* Board Information Styling */
+.board-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #f4a300; /* Bright yellow for contrast */
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Moves Panel Styling */
+.board-moves {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #ffffff; /* White background for text readability */
+    font-size: 16px;
+    color: #333;
+    height: 160px;
+    overflow-y: auto;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.board-moves p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Button Styling */
+.button {
+    padding: 0.5rem 1.2rem;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+.button-warning {
+    background-color: #ff9900; /* Vibrant orange button */
+    color: #fff;
+}
+
+.button-warning:hover {
+    background-color: #e68a00; /* Slightly darker orange on hover */
+}
+
+/* Spacing Utilities */
+.mt-8 {
+    margin-top: 1.5rem;
+}
+
+.mh-8 {
+    margin: 0 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .board-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Loading Text */
+.loading-text {
+    font-size: 14px;
+    color: #999;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* Chessboard Pieces */
+.chessboard-piece {
+    display: block !important;
+}
