@@ -24,7 +24,7 @@
 
 ## Libraries Used:
 <div align="center">
-    <img src="readme/pytorch.png" height=70> 
+    <img src="readme/Pytorch.png" height=70> 
     <img src="readme/flask.png" height=70>
 </div>
 
