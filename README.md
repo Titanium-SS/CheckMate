@@ -8,8 +8,15 @@
 ### Frontend:
 <div align="center"> <a href="https://react.dev/" target="_blank"> <img src="readme/react-js.png" height=70> </a> </div>
 
-### Libraries Used:
-<div align="center"> <a href="https://pytorch.org/" target="_blank"> <img src="readme/pytorch.png" height=70> </a> <a href="https://flask.palletsprojects.com/" target="_blank"> <img src="readme/flask.png" height=70> </a> <a href="https://axios-http.com/" target="_blank"> <img src="readme/axiosjs.webp" height=30> </a> </div> <hr>
+<hr>
+
+## Libraries Used:
+<div align="center">
+    <img src="readme/pytorch.png" height=70> 
+    <img src="readme/flask.png" height=70>
+</div>
+
+<hr>
 
 ## 🎯 About
 Checkmate is an AI-powered chess application that brings intelligent gameplay and a modern, futuristic UI to the table.
