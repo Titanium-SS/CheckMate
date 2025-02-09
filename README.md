@@ -17,7 +17,7 @@
 ## Libraries Used:
 
 <div align="center">
-    <img src="readme/pytorch.png" height=70> 
+    <img src="readme/pytorch.svg" height=70>
     <img src="readme/flask.png" height=70>
     <img src="readme/axiosjs.webp" height=40>
 </div>
