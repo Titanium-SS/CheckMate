@@ -1,13 +1,15 @@
 import "./ChessBoard.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Chess from "chess.js";
 import { Chessboard } from "react-chessboard";
 import Constants from "../constants";
+import HexGridBackground from "./HexGridBackground";
 
 export default function ChessBoard() {
   const [game, setGame] = useState(new Chess());
-  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [isLoading, setIsLoading] = useState(false);
+  const [winner, setWinner] = useState(null);
 
   function safeGameMutate(modify) {
     setGame((g) => {
@@ -17,20 +19,25 @@ export default function ChessBoard() {
     });
   }
 
+  function checkGameOver() {
+    if (game.in_checkmate()) {
+      const winnerColor = game.turn() === "w" ? "Black" : "White";
+      setWinner(`${winnerColor} Wins!`);
+    }
+  }
+
   async function makeEngineMove(moves) {
     if (game.game_over() || game.in_draw()) return;
 
-    setIsLoading(true); // Start loading state
+    setIsLoading(true);
 
     let response;
     let url = Constants.backend_url + "/predict";
     let parsedMoves = moves.replace(new RegExp(/\d+\. /, "g"), "");
-    console.log(parsedMoves);
 
     try {
       const res = await axios.post(url, { input_moves: parsedMoves });
       response = res.data.moves;
-      console.log(res.data);
     } catch (error) {
       console.error("Engine move error:", error);
       response = {
@@ -38,12 +45,14 @@ export default function ChessBoard() {
         object: error.response && error.response.data,
       };
     } finally {
-      setIsLoading(false); // End loading state
+      setIsLoading(false);
     }
 
     safeGameMutate((game) => {
       game.load_pgn(response);
     });
+
+    checkGameOver();
   }
 
   function onDrop(sourceSquare, targetSquare) {
@@ -53,25 +62,29 @@ export default function ChessBoard() {
       move = game.move({
         from: sourceSquare,
         to: targetSquare,
-        promotion: "q", // always promote to a queen for simplicity
+        promotion: "q",
       });
     });
 
-    if (move === null) return false; // illegal move
+    if (move === null) return false;
 
     makeEngineMove(game.pgn());
+
+    checkGameOver();
 
     return true;
   }
 
   function undoLastMove() {
+    setWinner(null);
     safeGameMutate((game) => {
       game.undo();
-      game.undo(); // Undo both player and engine moves
+      game.undo();
     });
   }
 
   function resetBoard() {
+    setWinner(null);
     safeGameMutate((game) => {
       game.reset();
     });
@@ -79,14 +92,17 @@ export default function ChessBoard() {
 
   return (
     <div className="board-panel">
+      {/* Add hexagonal grid background */}
+      <HexGridBackground isThinking={isLoading} />
+
+      {/* Chessboard */}
       <div>
-        <Chessboard
-          position={game.fen()}
-          onPieceDrop={onDrop}
-          boardWidth={500} // Adjust size as needed
-        />
+        <Chessboard position={game.fen()} onPieceDrop={onDrop} boardWidth={500} />
         {isLoading && <p className="loading-text">Calculating move...</p>}
+        {winner && <p className="winner-text">{winner}</p>}
       </div>
+
+      {/* Moves Box & Buttons (Now aligned to the right) */}
       <div className="board-information">
         <div className="board-moves">
           <p>{game.pgn()}</p>

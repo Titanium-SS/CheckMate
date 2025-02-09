@@ -17,7 +17,7 @@ def _parse_args():
     """
     parser = argparse.ArgumentParser(description='CheckMate inference parser')
 
-    parser.add_argument('--load_model', type=str, default="model/checkmate_16.pth",
+    parser.add_argument('--load_model', type=str, default="model/checkmate.pth",
                         help='Path to the model for inference')
     parser.add_argument('--config', type=str, default="configs/default.yaml",
                         help='Path to the configuration file (YAML format)')

@@ -1,84 +1,91 @@
-/* Board Panel Styling */
+/* Main Board Panel - Centering Everything */
 .board-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align to top */
+    padding: 2rem;
+    gap: 2rem; /* Adjust spacing between chessboard and moves panel */
+    background-color: #181818;
+    border-radius: 12px;
+    box-shadow: 0px 6px 18px rgba(49, 48, 48, 0.3);
+    margin-top: 160px; /* Push it further down from the navbar */
+    width: fit-content; /* Adjust width to content */
+    margin-left: auto;
+    margin-right: auto; /* Centering the whole panel */
+}
+
+/* Chessboard Container */
+.chessboard-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem;
-    gap: 1rem;
-    background-color: #e0d7ff; /* Light purple background for a fresh look */
-    border-radius: 12px;
-    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
-    margin-top: 80px; /* Ensure it's pushed below the fixed navbar */
 }
 
-/* Board Information Styling */
+/* Moves & Actions Panel */
 .board-information {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1.5rem;
-    background-color: #f4a300; /* Bright yellow for contrast */
+    background-color: rgba(0, 255, 195, 0.15); /* Slight neon tint */
     border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 420px;
+    box-shadow: 0px 4px 12px rgba(30, 212, 170, 0.405);
+    width: 300px; /* Fixed width */
+    height: 450px; /* Same height as the chessboard */
 }
 
 /* Moves Panel Styling */
 .board-moves {
     padding: 1rem;
     border-radius: 8px;
-    background-color: #ffffff; /* White background for text readability */
+    background-color: rgba(255, 255, 255, 0.1);
     font-size: 16px;
-    color: #333;
-    height: 160px;
+    color: #fff;
+    flex-grow: 1; /* Allow it to take remaining space */
     overflow-y: auto;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 8px rgba(0, 255, 195, 0.2);
+    width: 100%;
+    min-height: 350px; /* Ensures the height fills properly */
+    max-height: 350px;
 }
 
+/* Moves Panel Text */
 .board-moves p {
     font-size: 16px;
     font-weight: 600;
-    color: #444;
+    color: #ffffff;
     line-height: 1.6;
 }
 
-/* Button Styling */
+/* Buttons Container */
+.mt-8 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto; /* Push buttons to bottom */
+}
+
+/* Buttons */
 .button {
     padding: 0.5rem 1.2rem;
     font-size: 16px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     font-weight: 600;
 }
 
+/* Undo & Reset Button */
 .button-warning {
-    background-color: #ff9900; /* Vibrant orange button */
+    background-color: #ff9900;
     color: #fff;
 }
 
 .button-warning:hover {
-    background-color: #e68a00; /* Slightly darker orange on hover */
-}
-
-/* Spacing Utilities */
-.mt-8 {
-    margin-top: 1.5rem;
-}
-
-.mh-8 {
-    margin: 0 0.5rem;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .board-panel {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    background-color: #e68a00;
+    box-shadow: 0px 0px 12px rgba(255, 153, 0, 0.6);
 }
 
 /* Loading Text */
@@ -89,7 +96,40 @@
     margin-top: 8px;
 }
 
+/* Winner Text */
+.winner-text {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #ff3333;
+    margin-top: 10px;
+    background-color: #fff3cd;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ffa07a;
+}
+
 /* Chessboard Pieces */
 .chessboard-piece {
     display: block !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .board-panel {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem; /* Reduce spacing on smaller screens */
+    }
+    
+    .board-information {
+        width: 100%; /* Take full width on smaller screens */
+        max-width: 320px;
+        height: auto; /* Allow natural height */
+    }
+
+    .board-moves {
+        min-height: 200px;
+        max-height: 250px;
+    }
 }

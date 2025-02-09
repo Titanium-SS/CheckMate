@@ -1,30 +1,23 @@
-// @flow
 import * as React from "react";
 import "./Navbar.css";
 
 export const Navbar = () => {
   React.useEffect(() => {
-    const letters = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
-
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
     const logoText = document.querySelector(".logo-text");
     let interval = null;
 
     if (logoText) {
       logoText.onmouseover = (event) => {
         let iteration = 0;
-
         clearInterval(interval);
 
         interval = setInterval(() => {
           event.target.innerText = event.target.innerText
             .split("")
-            .map((letter, index) => {
-              if (index < iteration) {
-                return event.target.dataset.value[index];
-              }
-
-              return letters[Math.floor(Math.random() * 26)];
-            })
+            .map((letter, index) =>
+              index < iteration ? event.target.dataset.value[index] : letters[Math.floor(Math.random() * letters.length)]
+            )
             .join("");
 
           if (iteration >= event.target.dataset.value.length) {
@@ -47,10 +40,7 @@ export const Navbar = () => {
           </span>
         </div>
         <div className="nav-navigation">
-          <a
-            className="button nav-button"
-            href="https://github.com/Titanium-SS/checkmate"
-          >
+          <a className="button nav-button" href="https://github.com/Titanium-SS/checkmate">
             GitHub
           </a>
         </div>
