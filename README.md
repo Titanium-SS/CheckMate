@@ -120,8 +120,11 @@ Go to: http://localhost:3000 and start playing!
 <hr>
 
 ### New UI Highlights:
+
 ✅ Chessboard centered with an enhanced move tracking panel
+
 ✅ Undo and Reset buttons neatly aligned
+
 ✅ Futuristic hexagonal circuit-themed background
 
 <hr>
