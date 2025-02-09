@@ -1,29 +1,39 @@
 # CHECKMATE
+
 <hr> <div align="center"> <img src="readme/logo.png" height=300> <p><b>AI-Powered Chess with a Stunning UI</b></p> </div> <hr>
 
 ## 🚀 Tech Stack
+
 ### Backend:
+
 <div align="center"> <a href="https://www.python.org/" target="_blank"> <img src="readme/python.png" height=70> </a> </div>
 
 ### Frontend:
+
 <div align="center"> <a href="https://react.dev/" target="_blank"> <img src="readme/react-js.png" height=70> </a> </div>
 
 <hr>
 
 ## Libraries Used:
+
 <div align="center">
     <img src="readme/pytorch.png" height=70> 
     <img src="readme/flask.png" height=70>
+    <img src="readme/axiosjs.webp" height=40>
 </div>
 
 <hr>
 
 ## 🎯 About
+
 Checkmate is an AI-powered chess application that brings intelligent gameplay and a modern, futuristic UI to the table.
 
 ### 🔥 New Features:
+
 ✅ Hexagonal Circuit-Themed Background that glows dynamically when the AI is thinking.
+
 ✅ Refined UI Design with centered layout and better move tracking panel.
+
 ✅ Improved Interactions with enhanced animations, responsiveness, and user experience.
 
 This project demonstrates the power of AI in chess while providing an engaging and visually appealing interface.
@@ -62,13 +72,17 @@ checkmate/
 Want to train a custom chess AI? Follow these steps:
 
 1️⃣ Download the dataset from Kaggle: <a href="https://www.kaggle.com/milesh1/35-million-chess-games">35 Million Chess Games</a> [currently under review] <a href="https://www.kaggle.com/datasets/liury123/chess-game-from-12-top-players">Alternative</a>
+
 2️⃣ Rename it to `original_data.txt` and place it in the `data/` folder.
+
 3️⃣ Run `process_data.`py` to automatically generate a vocabulary file.
+
 4️⃣ Train the model using:
 
 ```bash
 python train.py
 ```
+
 5️⃣ The trained model will be saved in the `model/` directory.
 
 <hr>
@@ -114,25 +128,38 @@ Go to: http://localhost:3000 and start playing!
 
 ### ✨ Features
 ✔ **AI-powered move prediction** – Uses a Transformer model for intelligent gameplay.
+
 ✔ **Dynamic background glow effect** – Only activates when the AI is thinking.
+
 ✔ **Refined and Responsive UI** – Sleek animations, modern buttons, and a clean layout.
+
 ✔ **Move History Panel** – Displays all previous moves with smooth scrolling.
+
 ✔ **Undo & Reset functionality** – Instant game reset or undo your last move.
+
 ✔ **Seamless Backend Integration** – Flask-based API serves AI-generated moves efficiently.
 
 <hr>
 
 ### 🚀 Future Enhancements
 **🔹 Cloud Deployment** – Play chess online with real-time AI computation.
+
 **🔹 Stronger AI Model** – Improve move predictions using reinforcement learning.
+
 **🔹 Dark Mode** – Add a toggle between light and dark themes.
+
 **🔹 Multiplayer Mode** – Play against other human players with AI assistance.
+
 **🔹 Mobile App** - Make a Mobile compatible Web App.
 
 <hr>
 
 ### 🏆 Contributors
+
 👨‍💻 Shailendra Singh – Developer & Maintainer 🚀
+
 📌 GitHub: <a href="https://github.com/Titanium-SS">Titanium-SS</a>
+
+<hr>
 
 ## 🌟 Enjoy playing AI Chess with CheckMate! ♟️🔥
